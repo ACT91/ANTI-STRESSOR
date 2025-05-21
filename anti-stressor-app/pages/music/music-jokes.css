@@ -1,0 +1,39 @@
+.music-jokes-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.music-jokes-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #e91e63;
+  letter-spacing: 1px;
+}
+
+.music-jokes-video {
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 16px rgba(233, 30, 99, 0.15);
+  object-fit: cover;
+  width: 240px;
+  height: 240px;
+}
+
+.music-jokes-text {
+  font-size: 1.4rem;
+  margin: 2rem 0;
+  color: #222;
+}
+
+.music-jokes-popup {
+  background: #fff;
+  border: 2px solid #e91e63;
+  border-radius: 12px;
+  padding: 2rem;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.2);
+}

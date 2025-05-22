@@ -1,6 +1,13 @@
 .music-jokes-container {
   text-align: center;
-  padding: 2rem;
+  padding: 2rem 1rem;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Add this line to center horizontally */
 }
 
 .music-jokes-title {
@@ -8,6 +15,7 @@
   margin-bottom: 1.5rem;
   color: #e91e63;
   letter-spacing: 1px;
+  font-weight: 700;
 }
 
 .music-jokes-video {
@@ -15,25 +23,93 @@
   margin-bottom: 1rem;
   box-shadow: 0 2px 16px rgba(233, 30, 99, 0.15);
   object-fit: cover;
-  width: 240px;
-  height: 240px;
+  width: 200px;
+  height: 200px;
+  background: #222;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .music-jokes-text {
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   margin: 2rem 0;
   color: #222;
+  background: #fff6fa;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 1px 8px rgba(233, 30, 99, 0.07);
 }
 
 .music-jokes-popup {
   background: #fff;
   border: 2px solid #e91e63;
-  border-radius: 12px;
-  padding: 2rem;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
   position: fixed;
-  top: 30%;
+  top: 50%;
   left: 50%;
+  width: 90vw;
+  max-width: 350px;
   transform: translate(-50%, -50%);
   z-index: 1000;
   box-shadow: 0 4px 32px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.music-jokes-popup h3 {
+  margin-top: 0;
+  color: #e91e63;
+  font-size: 1.3rem;
+}
+
+.music-jokes-popup p {
+  color: #222;
+  font-size: 1.05rem;
+}
+
+@media (min-width: 480px) {
+  .music-jokes-container {
+    padding: 2.5rem 2rem;
+  }
+  .music-jokes-video {
+    width: 240px;
+    height: 240px;
+  }
+  .music-jokes-title {
+    font-size: 2.3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .music-jokes-container {
+    padding: 3rem 0;
+    max-width: 600px;
+    align-items: center; /* Ensure horizontal centering on medium+ screens */
+  }
+  .music-jokes-title {
+    font-size: 2.7rem;
+  }
+  .music-jokes-popup {
+    max-width: 400px;
+    padding: 2.5rem 2rem;
+  }
+  .music-jokes-text {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .music-jokes-container {
+    max-width: 700px;
+    padding: 4rem 0;
+    align-items: center; /* Ensure horizontal centering on large screens */
+  }
+  .music-jokes-title {
+    font-size: 3rem;
+  }
+  .music-jokes-video {
+    width: 280px;
+    height: 280px;
+  }
 }

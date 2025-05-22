@@ -1,12 +1,10 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: rgba(255, 255, 255, 0.92);
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,7 +14,8 @@
 a {
   font-weight: 500;
   color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
 }
 a:hover {
   color: #535bf2;
@@ -24,45 +23,125 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: inherit;
+  display: flex;
+  flex-direction: column;
+  /* Remove align-items and justify-content here to allow your app container to control centering */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* --- Modern Responsive Button Group --- */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+  margin: 2rem 0;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+button, .modern-btn {
+  border-radius: 1rem;
+  border: 1.5px solid transparent;
+  padding: 1em 0;
+  font-size: 1.1em;
+  font-weight: 600;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background: linear-gradient(90deg, #232526 0%, #646cff 100%);
+  color: #fff;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, width 0.2s;
+  box-shadow: 0 2px 12px 0 rgba(100,108,255,0.10);
+  width: 80vw;
+  max-width: 400px;
+  min-width: 180px;
+  margin: 0 auto;
+  display: block;
 }
 
+button:hover, .modern-btn:hover,
+button:focus, .modern-btn:focus {
+  background: linear-gradient(90deg, #646cff 0%, #232526 100%);
+  border-color: #646cff;
+  box-shadow: 0 6px 24px 0 rgba(100,108,255,0.18);
+  outline: none;
+}
+
+.button-group button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.button-icon-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.2em;
+}
+
+@media (min-width: 640px) {
+  .button-group {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+  button, .modern-btn {
+    width: 220px;
+    margin: 0;
+  }
+}
+
+/* --- Modern Heading --- */
+h1 {
+  font-size: 3.0em;
+  line-height: 1.1;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin: 2rem 0 1.5rem 0;
+  letter-spacing: 0.01em;
+  
+  /* Remove gradient and text-fill for your original look */
+}
+
+/* --- Light Mode --- */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
   }
-  a:hover {
-    color: #747bff;
+  h1 {
+    background: linear-gradient(90deg, #232526 10%, #646cff 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-  button {
-    background-color: #f9f9f9;
+  button, .modern-btn {
+    background: linear-gradient(90deg, #f9f9f9 0%, #646cff 100%);
+    color: #232526;
   }
+  button:hover, .modern-btn:hover,
+  button:focus, .modern-btn:focus {
+    background: linear-gradient(90deg, #646cff 0%, #f9f9f9 100%);
+    color: #232526;
+    border-color: #646cff;
+  }
+}
+
+/* --- Center Content --- */
+.center-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15rem;
+  top: 50%;
+  left: 50%;
 }

@@ -2,8 +2,29 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import CodingJokes from '../pages/coding/coding-jokes'
 import GamingJokes from '../pages/gaming/gaming-jokes'
 import MusicJokes from '../pages/music/music-jokes'
-
 // Import your other pages as needed
+
+// Simple SVG icons (no extra packages needed)
+const CodingIcon = () => (
+  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" style={{marginRight: '0.5em', verticalAlign: 'middle'}}>
+    <path stroke="#646cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+  </svg>
+)
+const GamingIcon = () => (
+  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" style={{marginRight: '0.5em', verticalAlign: 'middle'}}>
+    <rect x="2" y="6" width="20" height="12" rx="6" stroke="#4caf50" strokeWidth="2"/>
+    <circle cx="8" cy="12" r="1" fill="#4caf50"/>
+    <circle cx="16" cy="12" r="1" fill="#4caf50"/>
+    <path stroke="#4caf50" strokeWidth="2" d="M12 15v2"/>
+  </svg>
+)
+const MusicIcon = () => (
+  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" style={{marginRight: '0.5em', verticalAlign: 'middle'}}>
+    <path stroke="#e91e63" strokeWidth="2" d="M9 18V5l12-2v13"/>
+    <circle cx="6" cy="18" r="3" stroke="#e91e63" strokeWidth="2"/>
+    <circle cx="18" cy="16" r="3" stroke="#e91e63" strokeWidth="2"/>
+  </svg>
+)
 
 function Home() {
   return (
@@ -15,22 +36,25 @@ function Home() {
         </h1>
       </header>
       {/* Center the question and buttons vertically */}
-      <main className="flex-1 flex flex-col items-center justify-center px-2 sm:px-0">
+      <main className="center-content">
         <section className="text-center w-full max-w-xl mx-auto">
           <p className="text-base sm:text-lg mb-6 text-white">What is your hobby?</p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full">
-            <Link to="/coding" className="flex-1">
-              <button className="w-full rounded-lg border border-transparent px-6 py-2 text-base font-medium bg-[#1a1a1a] text-white cursor-pointer transition-colors duration-200 hover:border-[#646cff] focus:outline focus:outline-4 focus:outline-blue-400">
+          <div className="button-group">
+            <Link to="/coding">
+              <button>
+                <CodingIcon />
                 CODING
               </button>
             </Link>
-            <Link to="/gaming" className="flex-1">
-              <button className="w-full rounded-lg border border-transparent px-6 py-2 text-base font-medium bg-[#1a1a1a] text-white cursor-pointer transition-colors duration-200 hover:border-[#646cff] focus:outline focus:outline-4 focus:outline-blue-400">
+            <Link to="/gaming">
+              <button>
+                <GamingIcon />
                 GAMING
               </button>
             </Link>
-            <Link to="/music" className="flex-1">
-              <button className="w-full rounded-lg border border-transparent px-6 py-2 text-base font-medium bg-[#1a1a1a] text-white cursor-pointer transition-colors duration-200 hover:border-[#646cff] focus:outline focus:outline-4 focus:outline-blue-400">
+            <Link to="/music">
+              <button>
+                <MusicIcon />
                 MUSIC
               </button>
             </Link>

@@ -66,7 +66,7 @@ function CodingJokes() {
           .detectSingleFace(videoRef.current, new faceapi.TinyFaceDetectorOptions())
           .withFaceExpressions()
 
-        if (detections?.expressions?.happy > 0.3) {
+        if (detections?.expressions?.happy > 0.1) {
           setShowPopup(true)
           clearInterval(jokeIntervalRef.current)
           clearInterval(detectionIntervalRef.current)
